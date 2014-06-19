@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+	
+	<h1>{{title}}</h1>
+
+	<form method="POST" action="{% url 'crear_cuenta' %}">
+		
+		<ul class="nav navbar">
+		
+		{% csrf_token %}
+		{{form.as_ul}}
+
+		<li>
+				<input type="submit" class="btn btn-success" value="Crear Cuenta :) ">
+		</li>
+		<ul>
+	</form>
+
+{% endblock  %}

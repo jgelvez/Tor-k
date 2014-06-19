@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span4">
+      <!-- SIDEBAR -->
+
+      	<div class="well" style="margin:0px;">
+			<form method="POST" action="{% url 'home' %}" class="form-horizontal">
+				{% csrf_token %}
+				<div class="control-group">
+					{{form.as_p}}
+				</div>
+				<input type="submit" value="Tuitealo!" class="btn btn-primary">
+			</form>
+		</div>
+		
+		<br>
+		{% include "core/info_profile.html" with profile=user.get_profile %}
+
+		{% load ultimos_tuits %}
+		{% mostrar_ultimos_tuits %}
+
+
+		
+		
+
+
+      <!-- ENDSIDEBAR -->
+    </div>
+    <div class="span8">
+		
+		<h3>Tuits</h3>	
+
+		<div class="span11">
+			{% for tuit in ultimos_tuits %}
+				{% include "core/info_tuit.html" %}
+			{% endfor %}
+		</div>
+
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}

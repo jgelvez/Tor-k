@@ -1,0 +1,29 @@
+body{
+	background: transparent url(../img/bg.jpg) no-repeat;  
+	background-repeat:no-repeat;
+	background-attachment:fixed;	
+	padding-top: 60px; 
+}
+
+#doc{
+	background-color: #ffffff;
+	padding: 10px;
+	border-radius: 10px;
+	box-shadow: 0px 0px 20px #000000;
+	max-width:900px;
+	margin-bottom: 200px;
+}
+
+
+.tuit-info{
+	padding:0px;
+	text-align: right;
+	font-size: 80%;
+}
+
+#id_texto_de_tu_tuit{
+	width:50%;
+}
+
+.table-info-tuit-count td{ text-align:center;}
+.table-info-tuit-count td p{ margin-top: 10px; border-top: 1px solid #cccccc;}

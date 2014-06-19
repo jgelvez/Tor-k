@@ -1,0 +1,16 @@
+
+
+Ultimos {{total}} tuits
+<hr>
+{% for tuit in tuits  %}
+	<ul class="nav">
+		<li>
+			<a href=" {% url 'usuario_seleccionado' tuit.usuario.username %} ">
+				{{tuit.usuario|capfirst}} dijo:
+			</a> 
+			 {{tuit}}
+		</li>
+	</ul>
+	
+{% endfor %}
+

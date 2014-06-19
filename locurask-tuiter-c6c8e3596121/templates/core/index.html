@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+	
+<h1>{{title}}</h1>
+
+<h2>Estos son los ultimos tuits</h2>
+
+{% for t in tuits %}
+	
+
+	{% include "core/info_tuit.html" with tuit=t %}
+	
+	{% if not forloop.last %}
+		<hr>
+	{% endif %}
+
+
+{% endfor %}
+
+
+{% endblock %}
+
+	
+
+

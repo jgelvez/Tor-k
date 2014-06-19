@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span4">
+      <!-- SIDEBAR -->
+		{% include "core/info_profile.html" with profile=usuario.get_profile %}
+      
+		{% if user.is_authenticated %}
+			{% if te_sigue %}
+				<div class="alert alert-info"> <strong> {{usuario}} te sigue a ti :D </strong></div>
+			{% else %}
+				<div class="alert alert-warning"> <strong> {{usuario}} no te sigue :(  </strong></div>
+			{% endif %}
+		{% endif %}
+
+      <!-- ENDSIDEBAR -->
+
+
+    </div>
+    <div class="span8">
+		
+		<div class="pull-right">
+		{% if not es_tu_usuario %}
+			{% if lo_seguis %}
+					<a  href="{% url 'dejar_de_seguir_a' usuario.id %}" 
+						class="btn btn-inverse" style="" 
+						onclick="return confirm('Esta seguro que quiere dejar de seguir a {{usuario}} :\'( ?'); "
+						> 
+						<i class='icon-remove icon-white'></i>
+						dejar de seguir a {{usuario}} 
+					</a> 
+			{% else %}
+					<a 	href="{% url 'seguir_a' usuario.id %}" 
+						class="btn btn-success" > 
+						<i class='icon-ok icon-white'></i>
+						seguir a {{usuario}} 
+					</a> 
+					
+			{% endif %}
+		{% endif %}
+		</div>
+
+		<h3>{{title}}</h3>	
+
+
+		<div class="span11">
+			{% for tuit in ultimos_tuits %}
+				{% include "core/info_tuit.html" %}
+			{% endfor %}
+		</div>
+
+    </div>
+  </div>
+</div>
+
+
+
+{% endblock  %}

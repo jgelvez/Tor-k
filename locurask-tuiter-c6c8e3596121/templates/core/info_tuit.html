@@ -1,0 +1,61 @@
+<div id="id_contenedor_tuit_{{tuit.id}}">
+
+<div class="row" style="padding:10px;" >
+
+	<div class="span2">	
+	    <div class="thumbnail">
+			
+			{% if tuit.usuario.get_profile.avatar %}
+			<img 	src="{{STATIC_URL}}{{tuit.usuario.get_profile.avatar}}" 
+					alt="avatar" 
+					style="width: 64px; height:auto;"
+			>
+			{% else %}
+			<img 	src="{{STATIC_URL}}img/default_avatar.jpg" 
+					alt="avatar" 
+					style="width: 64px; height:auto;"
+			>
+			{% endif %}
+
+			
+		</div>
+	</div>
+
+	<div class="span10" style="">
+		
+		<div class="alert alert-info" style="margin:0px;">
+			{{tuit.texto}}
+
+			{% if user == tuit.usuario %}
+
+				<a 	href="javascript:void(0);" 
+					data-tuit="{{tuit.id}}" 
+					class="btn btn-mini btn-danger pull-right eliminar-tuit"> 
+					eliminar tuit
+				</a>
+
+			{% endif %}
+		</div>
+		
+		<div class="tuit-info">
+
+			{% if user == tuit.usuario %}
+				Tu tuiteaste esto 
+			{% else %}
+			Nos dijo 
+			<a href=" {% url 'usuario_seleccionado' tuit.usuario.username %} ">
+				{{tuit.usuario|capfirst}} 
+			</a>
+			{% endif %}
+			el d&iacute;a 
+			{{tuit.fecha_de_publicacion|date:"d/m/y"}}
+			@{{tuit.fecha_de_publicacion|date:"h:m:s"}}
+		</div>
+
+	</div>	
+
+</div>
+
+<hr size="1">
+
+</div>

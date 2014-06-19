@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+<div class="hero-unit">
+	<h1>{{title}}</h1>
+	<p>Una aplicaci&oacute;n para aprender a programar en django</p>
+	<p>Si ya tienes una cuenta de usuario, puedes <a href="{% url 'login' %}"> iniciar sesi&oacute;n </a></p>
+	
+    <a class="btn btn-success btn-large pull-right" href="{% url 'crear_cuenta' %}">
+      <i class="icon-plus icon-white"></i> Create una cuenta
+    </a>
+	<br>	
+</div>
+
+{% endblock  %}

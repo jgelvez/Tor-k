@@ -1,0 +1,18 @@
+syntax: glob
+*.pyc
+*~
+.setting*
+*.pydev*
+.project
+nohup*
+.swp
+.ropeproject*
+tuiter.sublime-project
+tuiter.sublime-workspace
+syntax: regexp
+misc/
+.directory
+doc/modelo.graphml
+bases/*
+database.db
+static/avatars/*

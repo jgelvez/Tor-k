@@ -1,0 +1,29 @@
+/* Curso - Django - UDC - 2013 */
+/* The Style!! */
+
+body{
+	background-color: #efefef;
+}
+.titulo{
+	background: url(../img/titulo-bg.gif) repeat-x;
+	color: #555;
+	padding:8px;
+	font-size: 180%;
+	margin:20px 0px 20px 0px;
+	box-shadow: 0px 2px 15px  #555555;
+}
+
+.diapo{
+	border:1px solid #cccccc;
+	padding:10px;
+	box-shadow: 0px 0px 10px #cccccc;
+	background-color: #ffffff;
+	margin: 40px 0px 40px 0px;
+}
+.diapo h3{
+	margin:0px 0px 30px 0px;
+	padding:0px;
+	border-bottom:1px dotted #cccccc;
+}
+
+
