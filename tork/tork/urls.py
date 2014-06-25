@@ -7,8 +7,6 @@ admin.autodiscover()
 urlpatterns = patterns('',
     
     url(r'^admin/', include(admin.site.urls)),
-
-    (r'^index/$', pagina_inicio),
-	(r'^hora/$', hora_actual),
-	(r'^hora/mas/(\d{1,2})/$', hora_demas),
+    (r'^$', pagina_inicio),
+	
 )
